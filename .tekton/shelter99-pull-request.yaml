@@ -155,7 +155,9 @@ spec:
     - name: clone-repository
       params:
       - name: url
-        value: null
+        value: $(params.git-url)
+      - name: url2
+        value: $(params.git-url)
       - name: revision
         value: $(params.revision)
       - name: ociStorage
