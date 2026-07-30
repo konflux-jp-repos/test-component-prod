@@ -176,6 +176,19 @@ spec:
       workspaces:
       - name: basic-auth
         workspace: git-auth
+    - name: hello-world
+      runAfter:
+      - clone-repository
+      taskSpec:
+        steps:
+        - name: echo
+          # timeout: 10s
+          image: registry.access.redhat.com/ubi9/ubi-minimall:latest
+          script: |
+            #!/bin/sh
+            # sleep 60
+            echo "hello world!"
+            exit 0
     - name: prefetch-dependencies
       params:
       - name: input
